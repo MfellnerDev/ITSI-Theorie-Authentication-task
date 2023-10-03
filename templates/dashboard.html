@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Dashboard</title>
 </head>
-<body class="bg-light">
+<body class="bg-light" style="background-color: {{ user.favorite_color }}">
     <div class="container mt-5">
         <h1 class="mb-4">Welcome, {{ user.email }}!</h1>
         <form method="post" action="/change-color">
             <div class="form-group">
-                <label for="favourite_color">Favorite Color:</label>
-                <input type="color" class="form-control" name="favourite_color" value="{{ user.favorite_color }}" required style="width: 150px; height: 30px;">
+                <label for="favorite_color">Favorite Color:</label>
+                <input type="color" class="form-control" name="favorite_color" value="{{ user.favorite_color }}" required style="width: 150px; height: 30px;">
             </div>
             <button type="submit" class="btn btn-primary">Set Color</button>
         </form>
