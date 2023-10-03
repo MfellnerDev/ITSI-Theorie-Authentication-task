@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Dashboard</title>
+    <title>Login</title>
 </head>
 <body class="bg-light">
     <div class="container mt-5">
-        <h1 class="mb-4">Welcome, {{ user.username }}!</h1>
-        <form method="post" action="./index.html "><!-- Method for changing Background color -->
+        <h1>Login</h1>
+        <form method="post" action="/login"> <!-- Hier methode zur anmeldung-->
             <div class="form-group">
-                <label for="favorite_color">Favorite Color:</label>
-                <input type="color" class="form-control" name="favorite_color" value="#000000" required style="width: 150px; height: 30px;">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="email" required style="width: 300px; height: 35px;">
             </div>
-            <button type="submit" class="btn btn-primary">Set Color</button>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" required style="width: 300px; height: 35px;">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <p class="mt-3"><a href="./login.html" class="btn btn-danger">Logout</a></p>
+        <p class="mt-3">Don't have an account? <a href="/register" class="btn btn-link">Register here</a>.</p>
     </div>
 
     <!-- Bootstrap JS and Popper.js CDN -->

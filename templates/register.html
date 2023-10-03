@@ -9,19 +9,23 @@
 </head>
 <body class="bg-light">
     <div class="container mt-5">
-        <h1>Login</h1>
-        <form method="post" action="./dashboard.html"> <!-- Hier methode zur anmeldung-->
+        <h1>Register</h1>
+        <form method="post" action="/register">
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" name="username" required style="width: 300px; height: 35px;">
+                <label for="email">Username:</label>
+                <input type="text" class="form-control" name="email" required style="width: 300px; height: 35px;">
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" name="password" required style="width: 300px; height: 35px;">
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+                        <div class="form-group">
+                <label for="favourite_color">Favorite Color:</label>
+                <input type="color" class="form-control" name="color" value="{{ user.favourite_color }}" required style="width: 150px; height: 30px;">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
         </form>
-        <p class="mt-3">Don't have an account? <a href="./register.html" class="btn btn-link">Register here</a>.</p>
+        <p class="mt-3">Already have an account? <a href="/login" class="btn btn-link">login here</a>.</p>
     </div>
 
     <!-- Bootstrap JS and Popper.js CDN -->
