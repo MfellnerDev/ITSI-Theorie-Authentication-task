@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        title Dashboard
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        style.
+            body, footer {
+                background-color: #{user.color};
+            }
+    body
+        .container.mt-5
+            .row.justify-content-center
+                .col-md-6
+                    .card
+                        .card-header
+                            h1.dashboard-header.text-center Dashboard
+                        .card-body
+                            p.text-center.mb-3 Welcome, #{user.username}
+                            p.text-center.mb-3 Your chosen color: #{user.color}
+                            form(action="/change-color", method="POST")
+                                .form-group
+                                    label(for="color") Choose a New Color:
+                                    input.form-control(type="color" name="newColor" required)
+                                button.btn.btn-primary.btn-block(type="submit") Change Color
+                            p.text-center.mt-3
+                                a.btn.btn-danger(href="/logout") Logout
+    footer.footer.text-center
+        p © 2023 Manuel Fellner
+        p © 2023 Sebastian Sailer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")

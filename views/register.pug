@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        title Register
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    body
+        .container.mt-5
+            .row.justify-content-center
+                .col-md-6
+                    .card
+                        .card-header
+                            h1.register-header.text-center Register
+                        .card-body
+                            form(action="/register", method="POST")
+                                .form-group
+                                    label(for="username") Username:
+                                    input.form-control(type="text", name="username", required)
+                                .form-group
+                                    label(for="password") Password:
+                                    input.form-control(type="password", name="password", required)
+                                .form-group
+                                    label(for="color") Choose a Color:
+                                    input.form-control(type="color", name="color", required)
+                                button.btn.btn-primary.btn-block(type="submit") Register
+                            p.text-center.mt-3 Already have an account?
+                                a(href="/login") Login
+        footer.footer.text-center
+            p © 2023 Manuel Fellner
+            p © 2023 Sebastian Sailer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")

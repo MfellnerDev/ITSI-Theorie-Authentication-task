@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        title Login
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    body
+        .container.mt-5
+            .row.justify-content-center
+                .col-md-6
+                    .card
+                        .card-header
+                            h1.login-header.text-center Login
+                        .card-body
+                            form(action="/login", method="POST")
+                                .form-group
+                                    label(for="username") Username:
+                                    input.form-control(type="text", name="username", required)
+                                .form-group
+                                    label(for="password") Password:
+                                    input.form-control(type="password", name="password", required)
+                                button.btn.btn-primary.btn-block(type="submit") Login
+                            p.text-center.mt-3 Don't have an account?
+                                a(href="/register") Register
+    footer.footer.text-center
+        p © 2023 Manuel Fellner
+        p © 2023 Sebastian Sailer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
