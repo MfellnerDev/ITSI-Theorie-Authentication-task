@@ -42,7 +42,7 @@ app.post('/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = new User({
             username,
-            password: hashedPassword,
+            hashedPassword,
             color,
         });
         await user.save();
@@ -101,6 +101,15 @@ app.post('/change-color', async (req, res) => {
         res.send('Error changing color.');
     }
 });
+
+app.get('/logout', async (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error destroying session:', err);
+        }
+        res.redirect('/login');
+    });
+})
 
 // start app
 app.listen(3000, () => {
